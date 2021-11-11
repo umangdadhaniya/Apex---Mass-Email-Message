@@ -1,0 +1,5 @@
+<apex:page standardController="contact" extensions="emailmass">
+    <apex:form>
+        <apex:commandButton value="sendemail" action="{!sendemail}"/>
+    </apex:form>
+</apex:page>

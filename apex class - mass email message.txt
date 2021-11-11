@@ -1,0 +1,20 @@
+public class emailmass {
+    private final list <id> contactids;
+    public list<contact> con;
+    
+    public emailmass(apexpages.standardcontroller controller)
+    {
+        con=[select id from contact limit 250];
+        for (integer i=0;i<250;i++)
+        {
+            contactids.add(con[i].ID);
+        }
+    }
+    public void sendemail()
+    {
+        messaging.MassEmailMessage mail = new messaging.massemailmessage();
+        mail.setTargetObjectIds(contactids);
+        messaging.sendemail(new messaging.massemailmessage[]{mail});
+    }
+
+}
